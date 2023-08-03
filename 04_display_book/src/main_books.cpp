@@ -1,6 +1,8 @@
 ﻿#include <string.h>
 #include <iostream>
 
+// Define the maximum length for the name to use.
+// Specify the length of characters in the content (Excluding the terminator).
 #define MAX_NAME_LEN 50
 #define MAX_TITLE_LEN 50
 
@@ -11,6 +13,7 @@ struct Author
 	void setName(char nameToSet[MAX_NAME_LEN])
 	{
 		strncpy(name, nameToSet, MAX_NAME_LEN);
+		// overwrite the last character
 		name[MAX_NAME_LEN] = 0;
 	}
 
@@ -66,6 +69,7 @@ int main()
 	Book book4;
 	Author author;
 
+	// Load the data into books
 	book1.id = 1;
 	book1.numAuthors = 0;
 	setBookName(book1, u8"The origin of truth (nu exista, nu o cautati)");
@@ -96,6 +100,7 @@ int main()
 	author.setName("Robert C. Martin");
 	book4.addAuthor(author);
 
+	// Display the books
 	book1.print();
 	book2.print();
 	book3.print();
